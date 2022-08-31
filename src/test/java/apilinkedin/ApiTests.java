@@ -75,7 +75,7 @@ public class ApiTests {
     }
 
     /**
-     * DELETE request - we are deleting the product (from 12 to 15.04) and description from Blue to Purple-green
+     * DELETE request - we are deleting the product Water Bottle
      */
 
     @Test
