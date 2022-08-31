@@ -1,5 +1,6 @@
 package apilinkedin;
 
+import models.Product;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -53,7 +54,6 @@ public class ApiTests {
         response.log().body(); // we will see log in output
     }
 
-
     /**
      * PUT request - we are updating the price (from 12 to 15.04) and description from Blue to Purple-green
      */
@@ -87,6 +87,22 @@ public class ApiTests {
                 }
                 """;
         var response = given().body(body).when().delete(endpoint).then();
+        response.log().body();
+    }
+
+    /**
+     * Serializing request body
+     */
+
+    @Test
+    public void createSerializedProduct(){
+        String endpoint = "http://localhost:8888/api_testing/product/create.php";
+        Product product = new Product(          // we instantiate a new product
+                "Water Bottle",
+                "Blue water bottle. Holds 64 ounces",
+                12,
+                4);
+        var response = given().body(product).when().post(endpoint).then();
         response.log().body();
     }
 }
