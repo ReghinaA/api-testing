@@ -97,7 +97,7 @@ public class ApiTests {
     @Test
     public void createSerializedProduct(){
         String endpoint = "http://localhost:8888/api_testing/product/create.php";
-        Product product = new Product(          // we instantiate a new product
+        Product product = new Product(          // we instantiate a new product (Water Bottle that was deleted earlier)
                 "Water Bottle",
                 "Blue water bottle. Holds 64 ounces",
                 12,
